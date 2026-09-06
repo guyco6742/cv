@@ -116,11 +116,20 @@
     gap: 1rem; padding: .7rem 0;
   }
   .mark {
-    font-family: var(--f-mono); font-size: .8rem; letter-spacing: .02em;
+    font-family: var(--f-mono); font-size: .8rem; letter-spacing: .06em;
     color: var(--ink-2); text-decoration: none;
     white-space: nowrap;
   }
   .mark b { color: var(--ink); font-weight: 500; }
+  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-phone {
+    font-family: var(--f-mono); font-size: .8rem; letter-spacing: .02em;
+    color: var(--accent); text-decoration: none; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    border: 1px solid var(--line); border-radius: 3px; padding: .3rem .6rem;
+    transition: border-color .18s, background .18s;
+  }
+  .nav-phone:hover { border-color: var(--accent); background: var(--accent-w); }
   .nav-links { display: flex; gap: 1.35rem; flex-wrap: wrap; }
   .nav-links a {
     font-family: var(--f-mono); font-size: .78rem; letter-spacing: .04em;
@@ -308,13 +317,16 @@
 
 <nav class="nav">
   <div class="wrap nav-in">
-    <a class="mark" href="#top"><b>guy-cohen</b> / qa &amp; ai</a>
-    <div class="nav-links">
-      <a href="#experience">Experience</a>
-      <a href="#ai">AI Toolkit</a>
-      <a href="#tools">Toolbox</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+    <a class="mark" href="#top"><b>GUY COHEN</b> / QA &amp; AI</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#ai">AI Toolkit</a>
+        <a href="#tools">Toolbox</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-phone" href="tel:+972524260312">052-4260312</a>
     </div>
   </div>
 </nav>
