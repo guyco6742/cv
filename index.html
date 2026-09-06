@@ -282,7 +282,19 @@
   /* ---------- contact ---------- */
   .contact { background: var(--ground-2); border-top: 1px solid var(--line); }
   .contact h2 { margin-bottom: .8rem; }
-  .contact-grid { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.7rem; }
+  .contact-grid { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.9rem; }
+  .ico {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3rem; height: 3rem; border: 1px solid var(--line); border-radius: 3px;
+    color: var(--ink-2); background: var(--surface);
+    transition: color .18s, border-color .18s, transform .15s ease;
+  }
+  .ico svg { width: 1.35rem; height: 1.35rem; display: block; }
+  .ico:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+  .ico-label {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
   .foot {
     margin-top: 3rem; padding-top: 1.1rem; border-top: 1px solid var(--line-soft);
     font-family: var(--f-mono); font-size: .73rem; letter-spacing: .05em; color: var(--ink-3);
@@ -326,6 +338,7 @@
       <a class="btn" href="https://www.linkedin.com/in/guyco42" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/guyco6742" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="tel:+972524260312">052-4260312</a>
+      <a class="btn" href="Guy-Cohen-CV.pdf" download>Download CV</a>
     </div>
   </div>
 </header>
@@ -522,10 +535,32 @@
     <h2>Have something repetitive that shouldn't be?</h2>
     <p class="lede">Open to QA leadership roles and to building tailor-made AI tooling for teams. Tell me the process that annoys you most. That's usually the right place to start.</p>
     <div class="contact-grid">
-      <a class="btn btn-primary" href="mailto:Guyco42@gmail.com?subject=Hello%20Guy">Guyco42@gmail.com</a>
-      <a class="btn" href="tel:+972524260312">052-4260312</a>
-      <a class="btn" href="https://www.linkedin.com/in/guyco42" target="_blank" rel="noopener">linkedin.com/in/guyco42</a>
-      <a class="btn" href="https://github.com/guyco6742" target="_blank" rel="noopener">github.com/guyco6742</a>
+      <a class="ico" href="mailto:Guyco42@gmail.com?subject=Hello%20Guy" title="Email">
+        <span class="ico-label">Email</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="M3 6.5l9 6.5 9-6.5"></path></svg>
+      </a>
+      <a class="ico" href="tel:+972524260312" title="Phone">
+        <span class="ico-label">Phone</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2.2 1.6a12.5 12.5 0 006.6 6.6L17 13l4 1.5v3a2 2 0 01-2.2 2A17.5 17.5 0 013.1 5.2 2 2 0 015 3z"></path></svg>
+      </a>
+      <a class="ico" href="https://www.linkedin.com/in/guyco42" target="_blank" rel="noopener" title="LinkedIn">
+        <span class="ico-label">LinkedIn</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="6" r="2.2"></circle><circle cx="18.5" cy="6" r="2.2"></circle><circle cx="12" cy="18" r="2.2"></circle><path d="M7.2 7.4l3.6 8.9M16.8 7.4l-3.6 8.9M7.7 6h8.6"></path></svg>
+      </a>
+      <a class="ico" href="https://wa.me/972524260312" target="_blank" rel="noopener" title="WhatsApp">
+        <span class="ico-label">WhatsApp</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8 8 0 01-11.8 7L3.5 20l1.6-5a8 8 0 1115.4-3.5z"></path><path d="M9.2 9.4c.3 2.4 2.5 4.5 4.9 4.9l1.1-1.4 1.7.9c-.3 1.1-1.4 1.7-2.6 1.4a8 8 0 01-5.9-5.9c-.3-1.2.3-2.3 1.4-2.6l.9 1.7z" fill="currentColor" stroke="none"></path></svg>
+      </a>
+      <a class="ico" href="https://github.com/guyco6742" target="_blank" rel="noopener" title="GitHub">
+        <span class="ico-label">GitHub</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.5" cy="5" r="2.3"></circle><circle cx="6.5" cy="19" r="2.3"></circle><circle cx="17.5" cy="7.5" r="2.3"></circle><path d="M6.5 7.3v9.4M17.5 9.8v1.4a3.5 3.5 0 01-3.5 3.5h-4a3.5 3.5 0 00-3.5 3.5"></path></svg>
+      </a>
+    </div>
+    <div class="cta-row" style="margin-top:1.5rem">
+      <a class="btn btn-primary" href="Guy-Cohen-CV.pdf" download>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 18.5h16"></path></svg>
+        Download CV (PDF)
+      </a>
     </div>
     <div class="foot">
       <span>Guy Cohen, QA Manager &amp; AI Automation Builder</span>
