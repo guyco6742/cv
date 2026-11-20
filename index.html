@@ -136,7 +136,7 @@
     color: var(--ink-2); text-decoration: none; padding: .2rem 0;
     border-bottom: 1px solid transparent; transition: color .18s, border-color .18s;
   }
-  .nav-links a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); border-bottom-color: var(--accent); }
   @media (max-width: 720px) { .nav-links { display: none; } }
 
   /* ---------- section scaffolding ---------- */
@@ -177,7 +177,7 @@
   }
   h1 .quiet { display: block; color: var(--ink-2); }
   h1 .caret {
-    display: inline-block; width: .58em; height: 1.05em; margin-left: .18em;
+    display: inline-block; width: .32em; height: 1.05em; margin-left: .14em;
     background: var(--accent); vertical-align: -.16em;
     animation: blink 1.15s steps(1, end) infinite;
   }
@@ -612,5 +612,29 @@
   </div>
 </section>
 
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  var lock = 0;
+  function setActive(i) {
+    links.forEach(function (a, j) { a.classList.toggle('active', j === i); });
+  }
+  function onScroll() {
+    if (Date.now() < lock) return;
+    var navH = (document.querySelector('.nav') || {}).offsetHeight || 0;
+    var line = navH + window.innerHeight * 0.3, cur = -1;
+    targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top <= line) cur = i; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = targets.length - 1;
+    setActive(cur);
+  }
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function () { setActive(i); lock = Date.now() + 900; });
+  });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
 </body>
 </html>
