@@ -219,6 +219,9 @@
   /* ---------- AI capability panels ---------- */
   .panels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
   @media (max-width: 860px) { .panels { grid-template-columns: 1fr; } }
+  .panels.two { grid-template-columns: repeat(2, 1fr); }
+  .panels.two .panel { border-bottom: 1px solid var(--line-soft); }
+  @media (max-width: 860px) { .panels.two { grid-template-columns: 1fr; } }
   .panel { padding: 1.7rem 1.5rem; border-right: 1px solid var(--line-soft); display: flex; flex-direction: column; gap: .8rem; }
   .panel:last-child { border-right: 0; }
   @media (max-width: 860px) {
@@ -523,10 +526,6 @@
         <span class="desc"><b>Scanned documents → clean Markdown.</b> OCR pipeline that turns unreadable scanned reports into structured text an assistant can actually reason over, at a fraction of the tokens, none of the manual retyping.</span>
       </div>
       <div class="ship">
-        <span class="what">Chrome Store</span>
-        <span class="desc"><b><a class="ship-link" href="https://chromewebstore.google.com/detail/nhplpmnccbhfgombegkggdngofclhpjh" target="_blank" rel="noopener">Break the Chain</a>.</b> A published Manifest V3 Chrome extension (TypeScript, Vite, MIT) that finds broken links, dead in-page anchors and redirect chains on the page you are on, or across a whole site. It walks shadow roots and same-origin iframes, records every redirect hop with loop detection, treats 401/403/429 as warnings rather than false positives, and exports to CSV or JSON. Everything runs locally: no account, no server, no telemetry. Source on <a class="ship-link" href="https://github.com/guyco6742/Break-the-Chain" target="_blank" rel="noopener">GitHub</a>.</span>
-      </div>
-      <div class="ship">
         <span class="what">Shipped</span>
         <span class="desc"><b>Any spreadsheet → a visual dashboard.</b> Drop in an Excel, CSV or PDF and get a standalone HTML dashboard with KPIs, charts and the insights that matter, built to the question being asked, not a fixed template.</span>
       </div>
@@ -552,7 +551,37 @@
     <h2 style="margin-bottom:.9rem">Small tools for annoying problems.</h2>
     <p class="lede" style="margin-bottom:2rem">Things I built because something kept wasting my time, packaged so you can download and use them too.</p>
 
-    <div class="panels">
+    <div class="panels two">
+      <div class="panel">
+        <span class="tag">Chrome Store</span>
+        <h3>Break the Chain</h3>
+        <p>A Manifest V3 extension (TypeScript, Vite) that finds broken links, dead in-page anchors and redirect chains on the page you are on, or across a whole site.</p>
+        <ul>
+          <li>Walks shadow roots and same-origin iframes</li>
+          <li>Records every redirect hop, with loop detection</li>
+          <li>Treats 401/403/429 as warnings, not false positives</li>
+          <li>Exports to CSV or JSON. Runs locally, no account, no telemetry</li>
+        </ul>
+        <div class="cta-row" style="margin-top:auto;padding-top:1.2rem">
+          <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/nhplpmnccbhfgombegkggdngofclhpjh" target="_blank" rel="noopener">Add to Chrome</a>
+          <a class="btn" href="https://github.com/guyco6742/Break-the-Chain" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
+      </div>
+      <div class="panel">
+        <span class="tag">Chrome Store</span>
+        <h3>Auto Load More for KSP</h3>
+        <p>KSP category pages load 12 products at a time and make you click "More results" again and again. This Manifest V3 extension does the clicking for you, in batches you choose.</p>
+        <ul>
+          <li>Choose 1 to 42 rounds of 12 products per batch</li>
+          <li>Draggable progress panel, on/off switch, settings remembered</li>
+          <li>Survives KSP's auto-generated class names that change every build</li>
+          <li>Runs only on ksp.co.il, collects nothing</li>
+        </ul>
+        <div class="cta-row" style="margin-top:auto;padding-top:1.2rem">
+          <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/gijgoclfofhgefeienlchbkhbeepjoan" target="_blank" rel="noopener">Add to Chrome</a>
+          <a class="btn" href="https://github.com/guyco6742/ksp-auto-load-more" target="_blank" rel="noopener">Source on GitHub</a>
+        </div>
+      </div>
       <div class="panel">
         <span class="tag">Windows app</span>
         <h3>ReverseLang</h3>
@@ -566,20 +595,6 @@
         <div class="cta-row" style="margin-top:auto;padding-top:1.2rem">
           <a class="btn btn-primary" href="downloads/ReverseLang.zip" download>Download for Windows</a>
           <a class="btn" href="https://github.com/guyco6742/ReverseLang" target="_blank" rel="noopener">Source on GitHub</a>
-        </div>
-      </div>
-      <div class="panel">
-        <span class="tag">Chrome extension</span>
-        <h3>Auto Load More for KSP</h3>
-        <p>KSP category pages load 12 products at a time and make you click "More results" again and again. This Manifest V3 extension does the clicking for you, in batches you choose.</p>
-        <ul>
-          <li>Choose 1 to 42 rounds of 12 products per batch</li>
-          <li>Draggable progress panel, on/off switch, settings remembered</li>
-          <li>Survives KSP's auto-generated class names that change every build</li>
-          <li>Runs only on ksp.co.il, collects nothing</li>
-        </ul>
-        <div class="cta-row" style="margin-top:auto;padding-top:1.2rem">
-          <a class="btn" href="https://github.com/guyco6742/ksp-auto-load-more" target="_blank" rel="noopener">Source on GitHub</a>
         </div>
       </div>
       <div class="panel">
